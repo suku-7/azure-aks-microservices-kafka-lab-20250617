@@ -32,9 +32,13 @@ Azure 계정 및 구독, Gitpod 워크스페이스, Spring Boot 애플리케이�
 
 ---
 
-## 이 문서는 Azure Kubernetes Service (AKS) 클러스터 환경에 Spring Boot 기반의 마이크로서비스 백엔드와 웹 프론트엔드를 배포하고 Kafka를 연동하는 과정을 상세히 기록합니다. Gitpod을 개발 환경으로 활용하여 Docker 이미지 빌드, Helm을 통한 미들웨어 설치, 그리고 Kubernetes YAML 파일을 이용한 서비스 배포 및 관리를 실습합니다.
+이 문서는 Azure Kubernetes Service (AKS) 클러스터 환경에 Spring Boot 기반의 마이크로서비스 백엔드와 웹 프론트엔드를 배포하고 Kafka를 연동하는 과정을 상세히 기록합니다.  
+Gitpod을 개발 환경으로 활용하여 Docker 이미지 빌드, Helm을 통한 미들웨어 설치, 그리고 Kubernetes YAML 파일을 이용한 서비스 배포 및 관리를 실습합니다.  
 
-## Kubernetes 환경에서는 애플리케이션의 application.yml 설정 파일에서 Kafka와 같은 클러스터 내부 서비스에 접근할 때 IP 주소 대신 **서비스 이름(Service Name)**을 DNS처럼 활용합니다. 예를 들어, my-kafka:9092는 my-kafka라는 서비스 이름을 통해 Kafka에 연결하며, Kubernetes의 내부 DNS가 자동으로 해당 서비스의 클러스터 IP로 바인딩을 처리합니다. 이는 서비스 디스커버리를 간소화하는 Kubernetes의 핵심 기능입니다. 또한, 서버 애플리케이션에서 npm이나 Docker Hub처럼 설치 파일을 관리하는 Helm을 통해서 Kafka와 같은 복잡한 미들웨어를 클러스터에 쉽게 배포할 수 있으며, 별도로 포트를 9092 등으로 명시적으로 띄우지 않아도 Helm 차트가 모든 설정을 자동화하여 동작합니다.
+Kubernetes 환경에서는 애플리케이션의 application.yml 설정 파일에서 Kafka와 같은 클러스터 내부 서비스에 접근할 때 IP 주소 대신 서비스 이름(Service Name)을 DNS처럼 활용합니다.  
+예를 들어, my-kafka:9092는 my-kafka라는 서비스 이름을 통해 Kafka에 연결하며, Kubernetes의 내부 DNS가 자동으로 해당 서비스의 클러스터 IP로 바인딩을 처리합니다.  
+이는 서비스 디스커버리를 간소화하는 Kubernetes의 핵심 기능입니다. 또한, 서버 애플리케이션에서 npm이나 Docker Hub처럼 설치 파일을 관리하는 Helm을 통해서 Kafka와 같은 복잡한 미들웨어를 클러스터에 쉽게 배포할 수 있으며,  
+별도로 포트를 9092 등으로 명시적으로 띄우지 않아도 Helm 차트가 모든 설정을 자동화하여 동작합니다.  
 
 ## 실습 단계별 상세 설명
 
