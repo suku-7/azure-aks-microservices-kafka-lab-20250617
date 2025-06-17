@@ -2,9 +2,7 @@
 ## azure-aks-microservices-kafka-lab-20250617
 https://labs.msaez.io/#/courses/cna-full/2c7ffd60-3a9c-11f0-833f-b38345d437ae/deploy-my-app-2024
 
-## 제목: Azure AKS에 컨테이너화된 FE/BE 마이크로서비스를 Kafka 연동하여 배포하고 운영한 실습입니다.
-
-## 요약:  
+## Azure AKS에 컨테이너화된 FE/BE 마이크로서비스를 Kafka 연동하여 배포하고 운영한 실습입니다.
 - Azure AKS 클러스터에 Spring Boot 마이크로서비스(BE) 및 웹 프론트엔드(FE)를 배포했습니다.
 - Docker 이미지 빌드부터 Helm을 통한 Kafka 설치, 그리고 Kubernetes YAML 파일을 이용한 서비스 배포 및 상호 연동을 실습했습니다.
 - 이를 통해 클라우드 네이티브 환경에서의 애플리케이션 배포 및 운영 전반을 경험했습니다.
